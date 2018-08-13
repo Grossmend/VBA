@@ -1,4 +1,5 @@
 Attribute VB_Name = "SQL_to_Excel"
+
 Sub export_sql()
 
 'Fast export data from SQL to Excel, by ADODB.Command
