@@ -38,6 +38,16 @@ Set objRecordset = objComm.Execute
 'number row begin paste data
 row_var = 4
 
+'check row number paste
+If row_var = 0 Or row_var = 1 Or row_var < 0 Then
+    row_var = 2
+End If
+
+'headers
+For i = 0 To objRecordset.Fields.Count - 1
+    Cells(row_var - 1, i + 1) = objRecordset.Fields(i).Name
+Next
+
 While Not objRecordset.EOF
     strRes = vbNullString
     For i = 0 To objRecordset.Fields.Count - 1
@@ -54,9 +64,3 @@ Set objComm = Nothing
 Set objRecordset = Nothing
 
 End Sub
-
-
-
-
-
-
